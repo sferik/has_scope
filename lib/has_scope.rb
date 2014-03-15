@@ -92,14 +92,14 @@ module HasScope
         scopes_configuration[scope] = self.scopes_configuration[scope].merge(options)
       end
     end
-  end
 
-  def with_scope_model(model_class, &block)
-    self.scopes_model_class = model_class
+    def with_scope_model(model_class, &block)
+      self.scopes_model_class = model_class
 
-    class_eval &block
+      class_eval &block
 
-    self.scopes_model_class = nil
+      self.scopes_model_class = nil
+    end
   end
 
   protected
